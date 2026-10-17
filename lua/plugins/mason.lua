@@ -1,19 +1,21 @@
 return {
 	{
-		"williamboman/mason.nvim",
-		config = true, -- wywołuje require("mason").setup()
+		"mason-org/mason.nvim",
+		config = true,
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
-		dependencies = { "mason.nvim" },
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = { "mason-org/mason.nvim" },
 		opts = {
 			ensure_installed = {
 				"lua_ls",
 				"pyright",
 				"rust_analyzer",
 				"clangd",
+				"ts_ls",
+				"gopls",
 			},
-			automatic_installation = true,
+			automatic_enable = { exclude = { "stylua" } },
 		},
 	},
 	{
