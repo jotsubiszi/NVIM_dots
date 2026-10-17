@@ -15,13 +15,13 @@ return {
 				local map = function(keys, fn, desc)
 					vim.keymap.set("n", keys, fn, { buffer = ev.buf, desc = "LSP: " .. desc })
 				end
-				map("K", vim.lsp.buf.definition, "Go to definition")
+				map("K", vim.lsp.buf.definition, "go to definition")
 				map("<leader>ca", vim.lsp.buf.code_action, "Code action")
-				map("gd", vim.lsp.buf.definition, {})
-				map("gr", vim.lsp.buf.references, {})
-				map("<leader>rn", vim.lsp.buf.rename, {})
-				map("[d", vim.diagnostic.goto_prev, {})
-				map("]d", vim.diagnostic.goto_next, {})
+				map("gd", vim.lsp.buf.definition, "buf def")
+				map("gr", vim.lsp.buf.references, "buf ref")
+				map("<leader>rn", vim.lsp.buf.rename, "buf rename")
+				map("[d", vim.diagnostic.goto_prev, "diag goto prev")
+				map("]d", vim.diagnostic.goto_next, "diag goto next")
 			end,
 		})
 	end,
