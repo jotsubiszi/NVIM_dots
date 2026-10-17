@@ -1,22 +1,28 @@
 return {
-	{
-		"neovim/nvim-lspconfig",
-		dependencies = { "hrsh7th/cmp-nvim-lsp" },
-		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = vim.lsp.config -- require("lspconfig")
+	"neovim/nvim-lspconfig",
+	dependencies = { "mason-org/mason-lspconfig.nvim" },
+	config = function()
+		vim.lsp.config("*", {
+			capabilities = require("blink.cmp").get_lsp_capabilities(),
+		})
 
-			for _, server in ipairs({ "lua_ls", "pyright", "rust_analyzer", "tsserver", "gopls", "clangd" }) do
-				lspconfig[server].setup({ capabilities = capabilities })
-			end
+		vim.lsp.config("lua_ls", {
+			settings = { Lua = { hint = { enable = true } } },
+		})
 
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
-			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {})
-		end,
-	},
+		vim.api.nvim_create_autocmd("LspAttach", {
+			callback = function(ev)
+				local map = function(keys, fn, desc)
+					vim.keymap.set("n", keys, fn, { buffer = ev.buf, desc = "LSP: " .. desc })
+				end
+				map("K", vim.lsp.buf.definition, "Go to definition")
+				map("<leader>ca", vim.lsp.buf.code_action, "Code action")
+				map("gd", vim.lsp.buf.definition, {})
+				map("gr", vim.lsp.buf.references, {})
+				map("<leader>rn", vim.lsp.buf.rename, {})
+				map("[d", vim.diagnostic.goto_prev, {})
+				map("]d", vim.diagnostic.goto_next, {})
+			end,
+		})
+	end,
 }
