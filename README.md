@@ -26,6 +26,15 @@ However if You have a specific font in mind it may be chellanging to find it amo
 ```shell
     paru -S ttf-hack-nerd
 ```
+After that just use below command and select font of your choosing.
+```shell
+    kitten choose-fonts
+```
+> WARNING:
+> Doing so will change your entire system font! 
+> Please be wary of that.
+
+Congrats Your font is up and running.
 
 ## TODO in README:
 - [x] ~~finish fonts chapter~~
@@ -34,9 +43,10 @@ However if You have a specific font in mind it may be chellanging to find it amo
 - [x] explain .mdPreview setup ```shell cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app npm install```
 
 ## TODO in dots:
-- [x] checkout if LATEX just works with MarkdownPreview plugin
+- [x] ~~checkout if LATEX just works with MarkdownPreview plugin~~ Nope, just KATEX for math equations
 - [x] add harpoon plugin
 - [x] put all keymaps into keymaps.lua or at least check if possible
+- [x] fix git nerd font icons 
 - [x] finish README
 
 
