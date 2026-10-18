@@ -1,5 +1,4 @@
 return {
-	-- 1. Znaki zmian na marginesie (+ / ~ / -) + blame inline
 	{
 		"lewis6991/gitsigns.nvim",
 		opts = {
@@ -15,7 +14,6 @@ return {
 		},
 	},
 
-	-- 2. Pełny UI do gita w stylu magit/lazygit, wewnątrz Neovima
 	{
 		"kdheepak/lazygit.nvim",
 		cmd = "LazyGit",
@@ -23,6 +21,5 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
-	-- 3. Diff / historia plików
 	{ "sindrets/diffview.nvim", cmd = { "DiffviewOpen", "DiffviewFileHistory" } },
 }
