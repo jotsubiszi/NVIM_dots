@@ -27,8 +27,15 @@ However if You have a specific font in mind it may be chellanging to find it amo
     paru -S ttf-hack-nerd
 ```
 
-## TODO:
-- [] explain ```shell git clone git@github.com:jotsubiszi/NVIM_dots.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim ```
-- [] sudo pacman -S tree-sitter-cli gcc lazygit (.mdPreview: nodejs  npm)
-- [] explain .mdPreview setup ```shell cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app npm install```
+## TODO in README:
+- [x] explain ```shell git clone git@github.com:jotsubiszi/NVIM_dots.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim ```
+- [x] sudo pacman -S tree-sitter-cli gcc lazygit (.mdPreview: nodejs  npm)
+- [x] explain .mdPreview setup ```shell cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app npm install```
+
+## TODO in dots:
+- [x] checkout if LATEX just works with MarkdownPreview plugin
+- [x] add harpoon plugin
+- [x] put all keymaps into keymaps.lua or at least check if possible
+- [x] finish README
+
 
