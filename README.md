@@ -28,6 +28,7 @@ However if You have a specific font in mind it may be chellanging to find it amo
 ```
 
 ## TODO in README:
+- [x] ~~finish fonts chapter~~
 - [x] explain ```shell git clone git@github.com:jotsubiszi/NVIM_dots.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim ```
 - [x] sudo pacman -S tree-sitter-cli gcc lazygit (.mdPreview: nodejs  npm)
 - [x] explain .mdPreview setup ```shell cd ~/.local/share/nvim/lazy/markdown-preview.nvim/app npm install```
