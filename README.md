@@ -45,8 +45,10 @@ Congrats Your font is up and running.
 ## TODO in dots:
 - [x] ~~checkout if LATEX just works with MarkdownPreview plugin~~ Nope, just KATEX for math equations
 - [x] add harpoon plugin
-- [x] put all keymaps into keymaps.lua or at least check if possible
+- [x] ~~put all keymaps into keymaps.lua or at least check if possible~~
 - [x] fix git nerd font icons 
 - [x] finish README
+- [x] convert all keymaps to nvim_create_autocmd
+
 
 
