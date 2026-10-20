@@ -1,3 +1,5 @@
+local builtin = require("telescope.builtin")
+
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
@@ -14,6 +16,7 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffer
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help_tags" })
 vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Oldfiles" })
 vim.keymap.set("n", "<leader>fs", "<cmd>Telescope grep_string<cr>", { desc = "Grep_string" })
+vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
 
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit" })
 
@@ -23,7 +26,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local map = function(keys, fn, desc)
 			vim.keymap.set("n", keys, fn, { buffer = ev.buf, desc = "LSP: " .. desc })
 		end
-		map("K", vim.lsp.buf.definition, "go to definition")
+		-- map("K", builtin.lsp_implementations, "go to definition")
+		map("K", vim.lsp.buf.hover, "go to definition")
 		map("<leader>ca", vim.lsp.buf.code_action, "Code action")
 		map("gd", vim.lsp.buf.definition, "buf def")
 		map("gr", vim.lsp.buf.references, "buf ref")

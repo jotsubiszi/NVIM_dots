@@ -12,6 +12,17 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {
+	spec = {
+		{
+			"folke/lazydev.nvim",
+			ft = "lua",
+			opts = {
+				library = {
+					{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+				},
+			},
+		},
+	},
 	change_detection = { notify = false },
 	install = { colorscheme = { "catppucin" } },
 	rocks = { enabled = false },
