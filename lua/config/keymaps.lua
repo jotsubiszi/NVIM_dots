@@ -26,8 +26,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		local map = function(keys, fn, desc)
 			vim.keymap.set("n", keys, fn, { buffer = ev.buf, desc = "LSP: " .. desc })
 		end
-		-- map("K", builtin.lsp_implementations, "go to definition")
-		map("K", vim.lsp.buf.hover, "go to definition")
+		map("K", vim.lsp.buf.hover, "Show implementation")
 		map("<leader>ca", vim.lsp.buf.code_action, "Code action")
 		map("gd", vim.lsp.buf.definition, "buf def")
 		map("gr", vim.lsp.buf.references, "buf ref")
