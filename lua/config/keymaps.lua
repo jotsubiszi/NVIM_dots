@@ -35,3 +35,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		map("]d", vim.diagnostic.goto_next, "diag goto next")
 	end,
 })
+
+vim.keymap.set("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true, desc = "Accept cop autocomplete" })
+
+vim.keymap.set("i", "<C-H>", "<cmd>cmp.hide<cr>", { desc = "Toggle blink.cmp" })
