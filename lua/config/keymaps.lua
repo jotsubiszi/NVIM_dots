@@ -37,5 +37,4 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 vim.keymap.set("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true, desc = "Accept cop autocomplete" })
-
-vim.keymap.set("i", "<C-H>", "<cmd>cmp.hide<cr>", { desc = "Toggle blink.cmp" })
+vim.keymap.set("i", "<C-L>", "<Plug>(copilot-accept-word)")
